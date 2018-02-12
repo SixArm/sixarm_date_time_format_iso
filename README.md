@@ -1,4 +1,4 @@
-# Date Time ISO nano format
+# Date Time UTC ISO format
 
 This page shows how to print a date and time:
 

@@ -1,11 +1,12 @@
-# Date Time UTC ISO format
+# SixArm.com → date time ISO format
 
 This page shows how to print a date and time:
 
-  * Using the UTC time zone
   * Using the ISO 8601 format
-  * Using seconds, or microseconds, or milliseconds, or nanoseconds
-  * Using the format "YYYY-MM-DDT00:00:00.000000000Z"
+  * Using the UTC time zone, or optionally with a time zone using hours and minutes, such as "+00:00"
+  * Using seconds, or microseconds, or milliseconds, or nanoseconds.
+  * Using the format "YYYY-MM-DDT00:00:00.000000000Z", or optionally "YYYY-MM-DDT00:00:00.000000000+00:00"
+
 
 Code conventions:
 
@@ -188,6 +189,20 @@ JavaScript with milliseconds:
 
     var t = new Date();
     var s = now.toISOString()
+    console.log(s);
+
+
+## JavaScript with ISO and time zone with hours and minutes
+
+    const t = new Date();
+    const offset = t.getTimezoneOffset();
+    const hours = parseInt(Math.abs(offset/60));
+    const minutes = Math.abs(offset%60);
+    const s = date.toISOString().slice(0, -1) +
+        ((offset < 0) ? '+' : '-') +
+        (((hours < 10) ? '0' : '') + hours) +
+        ':' +
+        (((minutes < 10) ? '0' : '') + minutes);
     console.log(s);
 
 

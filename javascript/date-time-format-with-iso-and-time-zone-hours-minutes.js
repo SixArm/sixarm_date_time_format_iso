@@ -2,6 +2,7 @@
  * 
  *     $ node date-time-format-with-iso-and-time-zone-hours-minutes.js
  *     2020-01-01T00:00:00.000+00:00
+ *
  */
 let x = getDateTimeFormatWithISOAndTimeZoneHoursMinutes();
 console.log(x);
